@@ -9,13 +9,13 @@ services:
       MYSQL_USER: 'admin'
       MYSQL_PASS: 'parola'
     volumes:
-      - /home/kalo/repos/mtr-time-tracker/mysql_data:/var/lib/mysql
+      - ./mysql_data:/var/lib/mysql
   web:
     build: .
-    command: python3 rest/manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
     ports:
       - "9000:8000"
     depends_on:
       - db
+    entrypoint: ["./wait-for-it.sh", "db:3306", "--timeout=30", "--", "./migrate-run.sh"]
