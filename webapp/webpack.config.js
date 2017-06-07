@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     devServer: {
-        host: process.env.HOST || 'localhost',
+        host: process.env.HOST || '0.0.0.0',
         port: process.env.PORT || 8080
     },
     entry: {
