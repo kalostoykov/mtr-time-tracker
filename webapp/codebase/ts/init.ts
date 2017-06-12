@@ -32,7 +32,7 @@ angular.module(Module, [
                 },
                 vars: {
                     development: {
-                        apiUrl: '//127.0.0.1:8000/time-tracker/api'
+                        apiUrl: '//localhost:9000/time-tracker/api'
                     },
                     production: {
                         apiUrl: '//api.mtr-time-tracker.aws.mtrdev.com/time-tracker/api'
