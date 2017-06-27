@@ -1,10 +1,9 @@
 ﻿///<reference path="../_all.ts"/>
 import {Module} from "../init";
 import {IScope, IEnvConfig} from "../interface";
-import {ProjectsService} from "../projects";
 
 export interface IPageService {
-    resetData(text:string):string;
+    resetData():void;
     setHtmlTitle(text:string):string
     setSlug(text:string):string
 }
@@ -16,8 +15,7 @@ export class PageService implements IPageService {
 
 
     constructor(private config:IEnvConfig,
-                private $scope:IScope,
-                private ProjectsService:ProjectsService) {
+                private $scope:IScope) {
     }
 
     resetData() {
@@ -42,6 +40,6 @@ angular.module(Module).factory("PageService", [
     "$rootScope", 
     "ProjectsService", 
     NewPageService]);
-export function NewPageService(config:IEnvConfig, $scope:IScope, ProjectsService:ProjectsService) {
-    return new PageService(config, $scope, ProjectsService);
+export function NewPageService(config:IEnvConfig, $scope:IScope) {
+    return new PageService(config, $scope);
 }
