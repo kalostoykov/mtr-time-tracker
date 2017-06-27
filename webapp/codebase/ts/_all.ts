@@ -13,7 +13,6 @@
 ///<reference path="controllers/home.ts"/>
 ///<reference path="controllers/login.ts"/>
 ///<reference path="controllers/page.ts"/>
-///<reference path="controllers/project.ts"/>
 ///<reference path="controllers/time_report_edit.ts"/>
 ///<reference path="controllers/time_report_list.ts"/>
 ///<reference path="controllers/time_report_new.ts"/>
