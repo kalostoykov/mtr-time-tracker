@@ -50,7 +50,7 @@ vagrant@mtr-time-tracker:/srv/project/vmachines/vagrant$ exit
 8. The next this you should to do is navigating to the env folder in the repository and creating local.py file.
 
 ```
-cd /rest/rest/env
+cd rest/rest/env
 ```
 
 Before writing your local setting in the local.py file you should first import the settings from the settings.py file.
@@ -147,27 +147,35 @@ Quit the server with CONTROL-C.
 
 Now the server is running.
 
-16. You need to download the npm and bower packages.
+16. Leave the server running and open new tab logging into vagrant again.
+You need to download the npm and bower packages.
 To do that you must navigate to the webapp folder and run the following commands:
 
 ```
-vagrant@mtr-time-tracker:/srv/project/rest$ cd ../webapp/
+vagrant@mtr-time-tracker:~$ cd /srv/project/webapp/
 vagrant@mtr-time-tracker:/srv/project/webapp$ npm install
 vagrant@mtr-time-tracker:/srv/project/webapp$ bower install
 ```
 
-17. Now compile the typescript files by running:
+17. In order to generate typescript definitions run tsd install from `webapp` folder
+```
+vagrant@mtr-time-tracker:/srv/project/webapp$ ./node_modules/tsd/build/cli.js install
+```
+
+18. Now compile the typescript files by running:
 
 ```
-vagrant@mtr-time-tracker:/srv/project/webapp$ tsc -w
+vagrant@mtr-time-tracker:/srv/project/webapp$ ./node_modules/typescript/bin/tsc
 ```
 
-**Note:** -w flag is used to watch the input files.
+**Note:** This will compile the project files just one time. If you are going to develop use `-w` flag so that project's files are watch for changes and compiled on the fly.
 
-18. To run everything now you need to start the Django server and the webpack server.
+19. To run everything now you need to start the Django server and the webpack server.
 To do that you can use two terminals and SSH to the Vagrant machine. The first terminal will run the Django server and the second one will run the webpack server.
 
-1. Command to run in the first terminal:
+**Note:** If you watch for typescript changes you will need 3 terminals for - server and client serving and client file changes
+
+1. Command to run in the first terminal(If you left the terminal at step 15 open skip this step):
 
 ```
 vagrant ssh
@@ -182,3 +190,4 @@ vagrant ssh
 vagrant@mtr-time-tracker:~$ cd /srv/project/webapp
 vagrant@mtr-time-tracker:/srv/project/webapp$ npm start
 ```
+

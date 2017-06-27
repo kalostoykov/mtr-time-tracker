@@ -1,0 +1,13 @@
+{
+  "name": "mtrtimetracker",
+  "globalDependencies": {
+    "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#73e712534896baf8f17b30bbf4f45f05d77f48c5",
+    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#73e712534896baf8f17b30bbf4f45f05d77f48c5",
+    "angular-environment": "github:DefinitelyTyped/DefinitelyTyped/angular-environment/angular-environment.d.ts#73e712534896baf8f17b30bbf4f45f05d77f48c5",
+    "angular-route": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular-route.d.ts#73e712534896baf8f17b30bbf4f45f05d77f48c5",
+    "angular-cookies": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular-cookies.d.ts#73e712534896baf8f17b30bbf4f45f05d77f48c5",
+    "angular-jwt": "github:DefinitelyTyped/DefinitelyTyped/angular-jwt/angular-jwt.d.ts#73e712534896baf8f17b30bbf4f45f05d77f48c5",
+    "moment": "github:DefinitelyTyped/DefinitelyTyped/moment/moment.d.ts#ddc0afa3149b24a0ff64fc80afd045cffdda3ecf",
+    "moment-node": "github:DefinitelyTyped/DefinitelyTyped/moment/moment-node.d.ts#ddc0afa3149b24a0ff64fc80afd045cffdda3ecf"
+  }
+}
