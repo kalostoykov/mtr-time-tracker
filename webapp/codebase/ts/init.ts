@@ -1,6 +1,7 @@
 ﻿///<reference path="_all.ts"/>
 import {AuthenticationService} from "./services/authentication";
 import {IScope, IEnvConfig} from "./interface";
+import {appConfig} from "./webappconfig";
 export let Module = "app";
 
 angular.module(Module, [
@@ -32,10 +33,10 @@ angular.module(Module, [
                 },
                 vars: {
                     development: {
-                        apiUrl: '//127.0.0.1:8000/time-tracker/api'
+                        apiUrl: appConfig.devApiUrl
                     },
                     production: {
-                        apiUrl: '//api.mtr-time-tracker.aws.mtrdev.com/time-tracker/api'
+                        apiUrl: appConfig.productionApiUrl
                     }
                 }
             });

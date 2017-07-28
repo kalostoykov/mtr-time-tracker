@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: 'mtr-time-tracker'
+      MYSQL_ROOT_PASSWORD: 'test'
+      MYSQL_USER: 'admin'
+      MYSQL_PASS: 'parola'
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+  web:
+    build: .
+    volumes:
+      - .:/code
+    ports:
+      - "9000:8000"
+    depends_on:
+      - db
+    entrypoint: ["./wait-for-it.sh", "db:3306", "--timeout=30", "--", "./migrate-run.sh"]

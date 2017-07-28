@@ -28,3 +28,5 @@ mtr-time-tracker-venv/
 
 # Configs
 gunicorn_conf/
+
+mysql_data/

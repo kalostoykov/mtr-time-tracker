@@ -50,6 +50,7 @@ EOF
 )
 
 all() { # Configure everything on a new machine.
+    export LC_ALL="en_US.UTF-8" && \
     install_server_libs && \
     install_apache && \
     set_apache_rewrite_mode && \
